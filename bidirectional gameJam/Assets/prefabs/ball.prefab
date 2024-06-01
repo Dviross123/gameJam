@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 4937577999850131465}
   - component: {fileID: 3270810261527953979}
   - component: {fileID: 5616664887343596824}
-  - component: {fileID: 5768766004504548361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac74c7a068c0493408de1ef6ea5c3147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 7593269168293144697, guid: 9a9d061bd1f31424ba0053598b9858be, type: 3}
+  ps: {fileID: 0}
+  inUse: 0
+  owner: 
+  launchSpeed: 10
+  rightPos: {fileID: 0}
+  leftPos: {fileID: 0}
+  rb: {fileID: 5616664887343596824}
 --- !u!58 &3270810261527953979
 CircleCollider2D:
   m_ObjectHideFlags: 0
