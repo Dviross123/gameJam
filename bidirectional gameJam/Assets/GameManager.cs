@@ -11,8 +11,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    void restart() 
+    public void restart() 
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }

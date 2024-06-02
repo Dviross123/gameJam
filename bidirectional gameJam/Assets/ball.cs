@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class ball : MonoBehaviour
 {
@@ -16,10 +18,19 @@ public class ball : MonoBehaviour
 
     [SerializeField] Rigidbody2D rb;
 
+
+
+    [SerializeField] GameObject endGameUI;
+    [SerializeField] TextMeshProUGUI winText;
+
     private void Start()
     {
         rightPos = GameObject.Find("right pos").transform;
         leftPos = GameObject.Find("left pos").transform;
+
+        endGameUI = GameObject.Find("Canvas").transform.GetChild(0).gameObject;
+
+        winText = endGameUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -68,17 +79,25 @@ public class ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+       
+
         if (collision.gameObject.CompareTag("leftP"))
         {
-            print("right won");
+            winText.color = Color.blue;
+            winText.text = "BLUE WON!";
+            Time.timeScale = 0;
+            endGameUI.SetActive(true);
         }
-
         else if (collision.gameObject.CompareTag("rightP"))
         {
-            print("left won");
+            winText.color = Color.red;
+            winText.text = "RED WON!";
+            Time.timeScale = 0;
+            endGameUI.SetActive(true);
         }
 
-        //Instantiate(ps, transform.position, Quaternion.identity);
+       // Instantiate(ps, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
