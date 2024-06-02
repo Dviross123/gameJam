@@ -78,7 +78,7 @@ public class ball : MonoBehaviour
             print("left won");
         }
 
-      //  Instantiate(ps, transform.position, Quaternion.identity);
+        //Instantiate(ps, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
