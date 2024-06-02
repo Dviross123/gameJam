@@ -23,6 +23,10 @@ public class ball : MonoBehaviour
     [SerializeField] GameObject endGameUI;
     [SerializeField] TextMeshProUGUI winText;
 
+
+    [SerializeField] AudioSource src;
+    [SerializeField] AudioClip shootSfx;
+
     private void Start()
     {
         rightPos = GameObject.Find("right pos").transform;
@@ -48,6 +52,7 @@ public class ball : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E)) 
             {
                 hasShoot = true;
+                src.PlayOneShot(shootSfx);
             }
 
             if (hasShoot) 
@@ -68,6 +73,7 @@ public class ball : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.RightShift))
             {
                 hasShoot = true;
+                src.PlayOneShot(shootSfx);
             }
 
             if (hasShoot)
@@ -79,9 +85,7 @@ public class ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-       
-
+     
         if (collision.gameObject.CompareTag("leftP"))
         {
             winText.color = Color.blue;

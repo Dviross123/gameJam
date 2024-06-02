@@ -10,6 +10,9 @@ public class player : MonoBehaviour
 
     [SerializeField] LayerMask ballLm;
 
+    [SerializeField] AudioSource src;
+    [SerializeField] AudioClip catchSfx;
+
     void Update()
     {
         if (isLeft)
@@ -36,13 +39,14 @@ public class player : MonoBehaviour
                     {
                         hit.collider.gameObject.GetComponent<ball>().inUse = true;
                         hit.collider.gameObject.GetComponent<ball>().owner = "left";
+                        src.PlayOneShot(catchSfx);
                     }
                 }
             }
-           
+
         }
 
-        else 
+        else
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
@@ -62,21 +66,15 @@ public class player : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, 100f, ballLm);
                 if (hit.collider != null)
                 {
-                    if (hit.collider.gameObject.GetComponent<ball>().inUse == false) 
+                    if (hit.collider.gameObject.GetComponent<ball>().inUse == false)
                     {
                         hit.collider.gameObject.GetComponent<ball>().inUse = true;
                         hit.collider.gameObject.GetComponent<ball>().owner = "right";
+                        src.PlayOneShot(catchSfx);
                     }
                 }
             }
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("ball")) 
-        {
-           
-        }
-    }
 }
