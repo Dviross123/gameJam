@@ -9,6 +9,8 @@ public class player : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
 
     [SerializeField] LayerMask ballLm;
+    [SerializeField]GameObject psRed;
+    [SerializeField]GameObject psBlue;
 
     void Update()
     {
@@ -36,6 +38,7 @@ public class player : MonoBehaviour
                     {
                         hit.collider.gameObject.GetComponent<ball>().inUse = true;
                         hit.collider.gameObject.GetComponent<ball>().owner = "left";
+                        Instantiate(psRed,transform.GetChild(0).transform.position, Quaternion.identity);
                     }
                 }
             }
@@ -66,6 +69,7 @@ public class player : MonoBehaviour
                     {
                         hit.collider.gameObject.GetComponent<ball>().inUse = true;
                         hit.collider.gameObject.GetComponent<ball>().owner = "right";
+                        Instantiate(psBlue, transform.GetChild(0).transform.position, Quaternion.identity);
                     }
                 }
             }

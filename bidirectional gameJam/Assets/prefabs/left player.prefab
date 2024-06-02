@@ -138,8 +138,8 @@ MonoBehaviour:
   ballLm:
     serializedVersion: 2
     m_Bits: 64
-  endGameUI: {fileID: 0}
-  winText: {fileID: 0}
+  psRed: {fileID: 5145124218276393234, guid: 904423ec80a66bf448e7c3841363b802, type: 3}
+  psBlue: {fileID: 5972094779982817527, guid: 881c909ec82f5b04db78554fae9287bd, type: 3}
 --- !u!50 &8236516627345487885
 Rigidbody2D:
   serializedVersion: 4
