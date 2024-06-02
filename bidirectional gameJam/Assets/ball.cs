@@ -101,7 +101,7 @@ public class ball : MonoBehaviour
             endGameUI.SetActive(true);
         }
 
-       // Instantiate(ps, transform.position, Quaternion.identity);
+        Instantiate(ps, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
