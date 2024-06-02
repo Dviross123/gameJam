@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class player : MonoBehaviour
 {
@@ -10,15 +9,6 @@ public class player : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
 
     [SerializeField] LayerMask ballLm;
-
-
-    [SerializeField] GameObject endGameUI;
-    [SerializeField] TextMeshProUGUI winText;
-
-    private void Start()
-    {
-        endGameUI.SetActive(false);
-    }
 
     void Update()
     {
@@ -86,15 +76,7 @@ public class player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ball")) 
         {
-            Time.timeScale = 0;
-            endGameUI.SetActive(true);
-
-            if (isLeft) 
-            {
-                winText.text = "right won!";
-            }
-            else
-                winText.text = "left won!";
+           
         }
     }
 }
