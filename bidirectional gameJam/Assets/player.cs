@@ -49,6 +49,7 @@ public class player : MonoBehaviour
                     }
                 }
             }
+           
         }
 
         else 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4937577999850131465}
   - component: {fileID: 3270810261527953979}
   - component: {fileID: 5616664887343596824}
+  - component: {fileID: 5768766004504548361}
   m_Layer: 6
   m_Name: ball
   m_TagString: Untagged
@@ -102,6 +103,7 @@ MonoBehaviour:
   ps: {fileID: 0}
   inUse: 0
   owner: 
+  hasShoot: 0
   launchSpeed: 10
   rightPos: {fileID: 0}
   leftPos: {fileID: 0}
